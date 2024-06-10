@@ -1,0 +1,13 @@
+package org.example.service;
+
+import org.example.model.BankAccount;
+
+public interface BankService {
+
+    void createAccount(BankAccount account);
+    void deposit(String accountNumber, double amount);
+    void withdraw(String accountNumber, double amount);
+    void transfer(String fromAccountNumber, String toAccountNumber, double amount);
+    BankAccount getAccount(String accountNumber);
+
+}
