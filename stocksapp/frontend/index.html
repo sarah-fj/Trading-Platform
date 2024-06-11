@@ -6,6 +6,7 @@
     <title>Stock Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Home Page -->
     <div id="home-page">
@@ -17,32 +18,8 @@
             <p>Your current balance: <span id="current-balance">$3857.88</span></p>
             <p>Total number of stocks owned: <span id="total-stocks">467</span></p>
             <p>Overall, you are in <span id="profits">Profits: $1735.78</span></p>
-            <button id="view-details">View Details</button>
-        </div>
-    </div>
-
-    <!-- Portfolio Page -->
-    <div id="portfolio-page" style="display: none;">
-        <button id="return-button">Return</button>
-        <h1>Portfolio</h1>
-        <p>Available to trade: <span id="portfolio-balance">$3857.88 CAD</span></p>
-        <div class="portfolio-list">
-            <div class="portfolio-item">
-                <p>NVIDIA Corp</p>
-                <p>5 Shares</p>
-                <p>$278.65</p>
-            </div>
-            <div class="portfolio-item">
-                <p>Vanguard S&P 500 Index ETF</p>
-                <p>12 Shares</p>
-                <p>$1209.20</p>
-            </div>
-            <div class="portfolio-item">
-                <p>Wayfair Inc.</p>
-                <p>9 Shares</p>
-                <p>$602.68</p>
-            </div>
-        </div>
+            <!-- Updated button to anchor -->
+            <a href="portfolio.html"><button id="view-details">View Details</button></a>
     </div>
 
     <script src="scripts.js"></script>
