@@ -1,0 +1,51 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #0046be;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.account-overview, .portfolio-list {
+    background-color: white;
+    margin: 2em;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #0046be;
+    color: white;
+    border: none;
+    padding: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003399;
+}
+
+#portfolio-page {
+    padding: 2em;
+}
+
+.portfolio-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.portfolio-item:last-child {
+    border-bottom: none;
+}
