@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Home Page -->
+    <div id="header">
+        <div class="logo-section">
+            <img src="./images/logo.png" class="logo">
+            
+            <div class="header-icons">
+                <div class="icon">
+                    <i class="fa-solid fa-location-dot fa-2x"></i>
+                    <p>ATM/BRANCH</p>
+                </div>
+                <div class="icon">
+                    <i class="fa-solid fa-globe fa-2x"></i>
+                    <p>ENGLISH</p>
+                </div>
+            </div>
+        </div>
+        <div class="tags">
+            <div class="left">
+                <ul>
+                    <li>Credit Cards</li>
+                    <li>Banking</li>
+                    <li>Lending</li>
+                    <li>Investing</li>
+                    <li>Wealth Management</li>
+                    <li>Open an Account</li>
+                </ul>
+            </div>
+            <div class="right">
+                <i class="fas fa-search"></i>
+                <p>How can we help?</p>
+            </div>
+        </div>
+    </div>
+    <div id="home-page">
+        <header>
+            <h1>Welcome, <span id="user-name">Jane Fraser</span>!</h1>
+        </header>
+        <div class="account-overview">
+            <h2>Account Overview</h2>
+            <p>Your current balance: <span id="current-balance">$3857.88</span></p>
+            <p>Total number of stocks owned: <span id="total-stocks">467</span></p>
+            <p>Overall, you are in <span id="profits">Profits: $1735.78</span></p>
+            <!-- Updated button to anchor -->
+            <a href="portfolio.html"><button id="view-details">View Details</button></a>
+    </div>
+    <div class="footer">
+        <img class="logo" src="./images/logo.png">
+        <div class="footer-info">
+            <div class="app-store">
+                <img src="./images/Google-Play.png" style="max-height:40px">
+                <img src="./images/App-Store.png" style="max-height:40px">
+            </div>
+            <div class="social-media-icons">
+                <i class="fa-brands fa-facebook fa-2x"></i>
+                <i class="fa-brands fa-twitter fa-2x"></i>
+                <i class="fa-brands fa-youtube fa-2x"></i>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Portfolio Page -->
+    <div id="portfolio-page">
+
+        <!-- Header area -->
+        <div class="flex flex-col bg-white">
+            <div class="flex flex-col justify-center items-start px-10 w-full bg-white max-md:px-5 max-md:max-w-full">
+                <img loading="lazy" src="./images/logo.png" class="logo" />
+                <img loading="lazy" src="./images/userIcon.png" class="top-right-avatar" />
+
+            </div>
+
+            <!-- Title area and button -->
+            <a href="index.html"><button id="return-button">Return</button></a>
+            <h2 class="centered-heading">Available to trade:</h2>
+            <h1 id="user-container" class="centered"> $3857.88 CAD </h1>
+
+
+            <!-- Portfolio shares -->
+            <h1 class="portfolio-name">Portfolio</h1>
+
+            <div class="portfolio-list">
+                <div id="portfolio-container"></div>
+                <script>
+                    const userContainer = document.getElementById('user-container');
+
+                    fetch('http://localhost:8080/user/JaneFraser')
+                        .then(response => response.json())
+                        .then(data => {
+                            // const portfolioAmount = document.createElement('div');
+                            // portfolioAmount.className = 'portfolio-Amount';
+                            userContainer.textContent = data.userAmount
+                        })
+                        .catch(error => console.error('Error fetching the stock data:', error));
+                </script>
+
+                <script>
+                    const portfolioContainer = document.getElementById('portfolio-container');
+
+                    fetch('http://localhost:8080/stocks')
+                        .then(response => response.json())
+                        .then(data => {
+                            data.forEach(stock => {
+                                const portfolioItem = document.createElement('div');
+                                portfolioItem.className = 'portfolio-item';
+
+                                const portfolioLeft = document.createElement('div');
+                                portfolioLeft.className = 'portfolio-left';
+
+                                const circle = document.createElement('div');
+                                circle.className = 'circle';
+
+                                const stockInfo = document.createElement('div');
+                                stockInfo.className = 'stock-info';
+
+                                const stockName = document.createElement('p');
+                                stockName.className = 'stock-name';
+                                stockName.textContent = stock.stockName;
+
+                                const stockShares = document.createElement('p');
+                                stockShares.className = 'stock-shares';
+                                stockShares.textContent = `${stock.quantity} Shares`;
+
+                                stockInfo.appendChild(stockName);
+                                stockInfo.appendChild(stockShares);
+
+                                portfolioLeft.appendChild(circle);
+                                portfolioLeft.appendChild(stockInfo);
+
+                                const portfolioMiddle = document.createElement('div');
+                                portfolioMiddle.className = 'portfolio-middle';
+
+                                const stockGraph = document.createElement('img');
+                                stockGraph.src = 'https://static.vecteezy.com/system/resources/thumbnails/022/659/642/small_2x/3d-growth-stock-diagram-financial-graph-isolated-on-transparent-background-business-candlestick-chart-investment-market-trade-exchange-analysis-and-economy-finance-report-png.png';
+                                stockGraph.alt = 'Graph';
+                                stockGraph.className = 'stock-graph';
+
+                                portfolioMiddle.appendChild(stockGraph);
+
+                                const portfolioRight = document.createElement('div');
+                                portfolioRight.className = 'portfolio-right';
+
+                                const stockValue = document.createElement('p');
+                                stockValue.className = 'stock-value';
+                                stockValue.textContent = `$${stock.stockPrice.toFixed(2)}`;
+
+                                portfolioRight.appendChild(stockValue);
+
+                                portfolioItem.appendChild(portfolioLeft);
+                                portfolioItem.appendChild(portfolioMiddle);
+                                portfolioItem.appendChild(portfolioRight);
+
+                                portfolioContainer.appendChild(portfolioItem);
+                            });
+                        })
+                        .catch(error => console.error('Error fetching the stock data:', error));
+                </script>
+            </div>
+
+            <div class="footer">
+                <img class="logo" src="./images/logo.png">
+                <div class="footer-info">
+                    <div class="app-store">
+                        <img src="./images/Google-Play.png" style="max-height:40px">
+                        <img src="./images/App-Store.png" style="max-height:40px">
+                    </div>
+                    <div class="social-media-icons">
+                        <i class="fa-brands fa-facebook fa-2x"></i>
+                        <i class="fa-brands fa-twitter fa-2x"></i>
+                        <i class="fa-brands fa-youtube fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+
+</body>
+
+</html>

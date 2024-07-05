@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="home-page">
+        <header>
+            <h1>Welcome, <span id="user-name">Jane Fraser</span>!</h1>
+        </header>
+        <div class="account-overview">
+            <h2>Account Overview</h2>
+            <p>Your current balance: <span id="current-balance">$3857.88</span></p>
+            <p>Total number of stocks owned: <span id="total-stocks">467</span></p>
+            <p>Overall, you are in <span id="profits">Profits: $1735.78</span></p>
+            <button id="view-details">View Details</button>
+        </div>
+
+        <!-- Create Stock -->
+        <h2>Create Stock</h2>
+        <form id="createStockForm">
+            <label for="stockId">Stock ID:</label>
+            <input type="text" id="stockId" name="stockId" required><br><br>
+            <label for="stockName">Stock Name:</label>
+            <input type="text" id="stockName" name="stockName" required><br><br>
+            <label for="stockPrice">Stock Price:</label>
+            <input type="number" id="stockPrice" name="stockPrice" required><br><br>
+            <label for="purchasePrice">Purchase Price:</label>
+            <input type="number" id="purchasePrice" name="purchasePrice" required><br><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required><br><br>
+            <button type="submit">Create Stock</button>
+        </form>
+
+        <!-- Get Stock -->
+        <h2>Get Stock</h2>
+        <form id="getStockForm">
+            <label for="getStockId">Stock ID:</label>
+            <input type="text" id="getStockId" name="getStockId" required><br><br>
+            <button type="submit">Get Stock</button>
+        </form>
+        <div id="fetched-stock-data"></div>
+
+        <!-- Increase Stock Price -->
+        <h2>Increase Stock Price</h2>
+        <form id="increaseStockForm">
+            <label for="increaseStockId">Stock ID:</label>
+            <input type="text" id="increaseStockId" name="increaseStockId" required><br><br>
+            <label for="increaseAmount">Amount:</label>
+            <input type="number" id="increaseAmount" name="increaseAmount" required><br><br>
+            <button type="submit">Increase Stock Price</button>
+        </form>
+
+        <!-- All Stocks -->
+        <h2>All Stocks</h2>
+        <button id="getAllStocksButton">Get All Stocks</button>
+        <div id="allStocks"></div>
+    </div>
+
+    <!-- Portfolio Page -->
+    <div id="portfolio-page" style="display:none;">
+        <!-- Header area -->
+        <div class="flex flex-col bg-white">
+            <div class="flex flex-col justify-center items-start px-10 w-full bg-white max-md:px-5 max-md:max-w-full">
+                <img loading="lazy" src="/images/logo.png" class="logo"/>
+                <img loading="lazy" src="/images/userIcon.png" class="top-right-avatar"/>
+            </div>
+
+            <!-- Title area and button -->
+            <button id="return-button">Return</button>
+            <h2 class="centered-heading">Available to trade:</h2>
+            <h1 class="centered"> $3857.88 CAD </h1>
+
+            <!-- Portfolio shares -->
+            <h1 class="portfolio-name">Portfolio</h1>
+            <div id="portfolio-list" class="portfolio-list">
+                <!-- Dynamic stock data will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Section to display fetched stock data -->
+        <div id="fetched-stock-data" class="fetched-stock-data"></div>
+
+        <div class="footer">
+            <img class="logo" src="/images/logo.png">
+            <div class="footer-info">
+                <div class="app-store">
+                    <img src="/images/Google-Play.png" style="max-height:40px">
+                    <img src="/images/App-Store.png" style="max-height:40px">
+                </div>
+                <div class="social-media-icons">
+                    <i class="fa-brands fa-facebook fa-2x"></i>
+                    <i class="fa-brands fa-twitter fa-2x"></i>
+                    <i class="fa-brands fa-youtube fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>
